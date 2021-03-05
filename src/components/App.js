@@ -7,7 +7,7 @@ import firebase from "../firebase";
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-const analytics = firebase.analytics();
+// const analytics = firebase.analytics();
 
 function App() {
   const [user] = useAuthState(auth);
@@ -56,7 +56,6 @@ function ChatRoom() {
   const query = messagesRef.orderBy("createdAt").limit(25);
 
   const [messages] = useCollectionData(query, { idField: "id" });
-
   const [formValue, setFormValue] = useState("");
 
   const sendMessage = async (e) => {
@@ -111,6 +110,7 @@ function ChatMessage(props) {
           src={
             photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
           }
+          alt="of user"
         />
         <p>{text}</p>
       </div>

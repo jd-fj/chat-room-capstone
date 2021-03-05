@@ -5,7 +5,7 @@ So right now in my noSQL database, i have a Collection called Messages:
 -- text (chat message)
 -- uid
 
-
+Before I logged in with different google account, it was displaying messages. Now it's not displaying messages, but the messages are getting added to Firebase. That means the problem is in the code that displays the messages.
 
 
 
