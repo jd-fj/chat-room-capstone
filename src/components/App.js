@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import firebase from "../firebase";
 import SignIn from "./SignIn";
+import SignOut from "./SignOut";
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -41,15 +42,15 @@ function App() {
 //   );
 // }
 
-function SignOut() {
-  return (
-    auth.currentUser && (
-      <button className="sign-out" onClick={() => auth.signOut()}>
-        Sign Out
-      </button>
-    )
-  );
-}
+// function SignOut() {
+//   return (
+//     auth.currentUser && (
+//       <button className="sign-out" onClick={() => auth.signOut()}>
+//         Sign Out
+//       </button>
+//     )
+//   );
+// }
 
 //
 //
