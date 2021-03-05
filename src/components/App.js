@@ -4,6 +4,7 @@ import "firebase/analytics";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import firebase from "../firebase";
+import SignIn from "./SignIn";
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -24,21 +25,21 @@ function App() {
   );
 }
 
-function SignIn() {
-  const signInWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
-  };
+// function SignIn() {
+//   const signInWithGoogle = () => {
+//     const provider = new firebase.auth.GoogleAuthProvider();
+//     auth.signInWithPopup(provider);
+//   };
 
-  return (
-    <>
-      <button className="sign-in" onClick={signInWithGoogle}>
-        Sign in with Google
-      </button>
-      <p>Sign in to go online and chat with peeps</p>
-    </>
-  );
-}
+//   return (
+//     <>
+//       <button className="sign-in" onClick={signInWithGoogle}>
+//         Sign in with Google
+//       </button>
+//       <p>Sign in to go online and chat with peeps</p>
+//     </>
+//   );
+// }
 
 function SignOut() {
   return (
