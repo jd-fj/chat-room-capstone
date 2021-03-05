@@ -1,3 +1,16 @@
+So right now in my noSQL database, i have a Collection called Messages:
+- Messages (doc: id)
+-- created at
+-- photoURL
+-- text (chat message)
+-- uid
+
+
+
+
+
+
+
 collection
 doc
 research firestore
