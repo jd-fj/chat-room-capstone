@@ -9,6 +9,7 @@ Before I logged in with different google account, it was displaying messages. No
 
 frick, might as well just try separating out components and hopefully in dissecting this, I will understand what I must do next
 
+It would be tight to maybe have one single chat room, and when you log in you can only see the most recent messages? 
 
 
 
