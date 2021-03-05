@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import 'firebase/auth';
 import 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';

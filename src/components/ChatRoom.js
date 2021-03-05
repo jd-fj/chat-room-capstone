@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import firebase from '../firebase';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-
 import ChatMessage from './ChatMessage';
 
 function ChatRoom() {
@@ -39,8 +38,10 @@ function ChatRoom() {
         <span ref={dummy}></span>
       </main>
 
+      {/* <div class='inputControl'> */}
       <form onSubmit={sendMessage}>
         <input
+          class='inputControl'
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
           placeholder='text input'
@@ -50,6 +51,7 @@ function ChatRoom() {
           sEnd
         </button>
       </form>
+      {/* </div> */}
     </>
   );
 }
