@@ -31,7 +31,7 @@ function ChatRoom() {
 
   return (
     <>
-      <main>
+      <main className="chatRoom">
         {messages &&
           messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
 
