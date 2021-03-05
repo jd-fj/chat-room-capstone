@@ -6,6 +6,7 @@ function SignIn() {
     const auth = firebase.auth();
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
+    // consider adding user to a document Collection in Firebase called "users" here?
   };
 
   return (
