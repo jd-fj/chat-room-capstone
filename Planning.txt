@@ -7,6 +7,8 @@ So right now in my noSQL database, i have a Collection called Messages:
 
 Before I logged in with different google account, it was displaying messages. Now it's not displaying messages, but the messages are getting added to Firebase. That means the problem is in the code that displays the messages.
 
+frick, might as well just try separating out components and hopefully in dissecting this, I will understand what I must do next
+
 
 
 
