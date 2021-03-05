@@ -6,6 +6,7 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import firebase from "../firebase";
 import SignIn from "./SignIn";
 import SignOut from "./SignOut";
+import ChatMessage from "./ChatMessage";
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -74,24 +75,24 @@ function ChatRoom() {
   );
 }
 
-function ChatMessage(props) {
-  const { text, uid, photoURL } = props.message;
+// function ChatMessage(props) {
+//   const { text, uid, photoURL } = props.message;
 
-  const messageClass = uid === auth.currentUser.uid ? "sent" : "received";
+//   const messageClass = uid === auth.currentUser.uid ? "sent" : "received";
 
-  return (
-    <>
-      <div className={`message ${messageClass}`}>
-        <img
-          src={
-            photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
-          }
-          alt="of user"
-        />
-        <p>{text}</p>
-      </div>
-    </>
-  );
-}
+//   return (
+//     <>
+//       <div className={`message ${messageClass}`}>
+//         <img
+//           src={
+//             photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
+//           }
+//           alt="of user"
+//         />
+//         <p>{text}</p>
+//       </div>
+//     </>
+//   );
+// }
 
 export default App;
