@@ -1,0 +1,21 @@
+collection
+doc
+research firestore
+
+friends inside each user
+friends is an array of emails,
+if you hit x it erases doc, if you hit check it adds the email to their' friends collection and deletes it from the send
+
+firestore's documentation build their to-do-list 
+
+c# with React?
+
+Api calls 
+
+when you do set, you need to write document name 
+
+set/add
+
+messages inside each user
+
+collection ID
