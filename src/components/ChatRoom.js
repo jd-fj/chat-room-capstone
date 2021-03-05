@@ -41,13 +41,13 @@ function ChatRoom() {
       {/* <div class='inputControl'> */}
       <form onSubmit={sendMessage}>
         <input
-          class='inputControl'
+          className='inputControl'
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
           placeholder='text input'
         />
 
-        <button type='submit' disabled={!formValue}>
+        <button className="sendButton" type='submit' disabled={!formValue}>
           sEnd
         </button>
       </form>
