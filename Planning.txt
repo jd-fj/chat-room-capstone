@@ -7,6 +7,9 @@ So right now in my noSQL database, i have a Collection called Messages:
 
 Users: Friends, received requests, sent requests, (confirmations can just delete request docs and add user to "Friends" field)
 
+When you use set() to create a document, you must specify an ID for the document to create.
+But sometimes there isn't a meaningful ID for the document, and it's more convenient to let Cloud Firestore auto-generate an ID for you. You can do this by calling add()
+
 Use something like this to add "users"
 .add (https://firebase.google.com/docs/firestore/manage-data/add-data)
 // Add a new document in collection "cities"
@@ -16,7 +19,7 @@ db.collection("cities").doc("LA").set({
     country: "USA"
 })
 .then(() => {
-    console.log("Document successfully written!");
+    console.log("Document successfully written!"); // maybe in the .then block I can check to see if there's already a request in, and if there's already a request just auto make them friends?
 })
 .catch((error) => {
     console.error("Error writing document: ", error);
