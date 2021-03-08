@@ -4,15 +4,17 @@ import firebase from "../firebase";
 function SignIn() {
   const signInWithGoogle = () => {
     const auth = firebase.auth();
-    const currentUser = auth.currentUser;
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
     // consider adding user to a document Collection in Firebase called "users" here?
-   
+    
     const firestore = firebase.firestore();
+    const currentUser = auth.currentUser;
     const usersRef = firestore.collection('users');
     return firestore.collection('users').add({user: currentUser, pending: [], friends: []});
-    
+
+
+
     // usersRef.doc("somethig").add({})
 
   //   db.collection("cities").doc("LA").set({
