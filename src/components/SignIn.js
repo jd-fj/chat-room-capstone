@@ -11,12 +11,15 @@ function SignIn() {
    
     const firestore = firebase.firestore();
     const usersRef = firestore.collection('users');
+    return firestore.collection('users').add({user: currentUser, pending: [], friends: []});
     
-    usersRef.doc(currentUser).set({
-      userName: currentUser,
-      friends: [],
-      pending: []
-  })
+    // usersRef.doc("somethig").add({})
+
+  //   db.collection("cities").doc("LA").set({
+  //     name: "Los Angeles",
+  //     state: "CA",
+  //     country: "USA"
+  // });
 
   // const sendMessage = async (e) => {
   //   e.preventDefault();
