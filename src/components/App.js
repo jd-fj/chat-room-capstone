@@ -8,7 +8,8 @@ import SignIn from './SignIn';
 import SignOut from './SignOut';
 import ChatRoom from './ChatRoom';
 import Login from './Login';
-// import Navigation from './Navbar'
+import Navigation from './Navigation';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 
@@ -22,10 +23,13 @@ function App() {
         <h1>My Chat App</h1>
         <SignOut />
       </header>*/}
+      
       {/* <SignIn/>
       <SignOut/>
       <ChatRoom/> */}
-      <section>{user ? <> <SignOut/> <ChatRoom /> </> : <Login/>}</section> 
+
+
+      <section>{user ? <> <SignOut/> <ChatRoom/> </> : <Login/>}</section> 
       
     </>
   );
