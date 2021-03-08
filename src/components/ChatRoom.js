@@ -39,25 +39,22 @@ function ChatRoom() {
         <span ref={dummy}></span>
       </main>
 
-      {/* <div class='inputControl'> */}
+      <div class='stickyBottom'>
           <form onSubmit={sendMessage}>
-      <Row>
-        <Col xs lg="2">
+
             <input
               className='inputControl'
               value={formValue}
               onChange={(e) => setFormValue(e.target.value)}
               placeholder='text input'
             />
-        </Col>
-        <Col>
+  
           <button className="sendButton" type='submit' disabled={!formValue}>
             sEnd
           </button>
-        </Col>
-      </Row>
+
         </form>
-      {/* </div> */}
+      </div>
     </>
   );
 }

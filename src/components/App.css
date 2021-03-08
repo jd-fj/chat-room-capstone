@@ -165,6 +165,8 @@ img {
   padding: 25px;
   font-size: 20px;
   opacity: .86;
+
+
 }
 
 .sendButton {
@@ -183,19 +185,39 @@ img {
   /* border: solid black; */
   font-size: xx-large;
 }
+.sendButton {
+  /* position: fixed; */
+  margin-right: 100px;
+}
 
 form {
-  font-size: xx-large;
+/* position: fixed; */
+}
+
+body {
+  width: 100%;
+  height: 100%
+}
+
+.stickyBottom {
   position: fixed;
   bottom: 0;
+  width: 100%;
 }
 
-.footer {
-  position: fixed;
-  bottom: 0;
+.chatRoom {
+  margin-bottom: 15%;
+}
+/* canvas {
+  border: 1px solid black;
+  height: 300px;
+  width: 300px;
+  position:relative;
 }
 
 
-nav {
-  background-color: aqua;
-}
+#message {
+  position:absolute;
+  top:150px;
+  left:100px;
+} */
