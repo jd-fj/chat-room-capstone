@@ -155,15 +155,16 @@ img {
   margin: 2px 5px;
 }
  */
- .sign-out {
-   margin: 1%;
- }
+  .sign-out {
+    margin: 1%;
+  }
 
 .inputControl {
   width: 70%;
-  border: 25px solid black;
+  border: 25px solid rgb(28, 21, 0);
   padding: 25px;
   font-size: 20px;
+  opacity: .86;
 }
 
 .sendButton {
@@ -172,6 +173,29 @@ img {
 }
 
 .messageSent .messageReceived, img {
-  width: 7%;
+  width: 5%;
   /* border: solid black; */
+  font-size: xx-large;
+}
+
+.messageSent .messageReceived, p {
+  
+  /* border: solid black; */
+  font-size: xx-large;
+}
+
+form {
+  font-size: xx-large;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+}
+
+
+nav {
+  background-color: aqua;
 }

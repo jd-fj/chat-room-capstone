@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import firebase from '../firebase';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import ChatMessage from './ChatMessage';
+import {Row, Col} from 'react-bootstrap';
 
 function ChatRoom() {
   const dummy = useRef();
@@ -39,23 +40,23 @@ function ChatRoom() {
       </main>
 
       {/* <div class='inputControl'> */}
-        <form onSubmit={sendMessage}>
-          <input
-            className='inputControl'
-            value={formValue}
-            onChange={(e) => setFormValue(e.target.value)}
-            placeholder='text input'
-          />
-
+          <form onSubmit={sendMessage}>
+      <Row>
+        <Col xs lg="2">
+            <input
+              className='inputControl'
+              value={formValue}
+              onChange={(e) => setFormValue(e.target.value)}
+              placeholder='text input'
+            />
+        </Col>
+        <Col>
           <button className="sendButton" type='submit' disabled={!formValue}>
             sEnd
           </button>
-          
+        </Col>
+      </Row>
         </form>
-
-        <div>
-          
-        </div>
       {/* </div> */}
     </>
   );
