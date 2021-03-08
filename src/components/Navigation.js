@@ -13,13 +13,13 @@ return(
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link className="nav-link active" aria-current="page" to="/breeds">ChatRoom</Link>
+            <Link className="nav-link active" aria-current="page" to="/ChatRoom">ChatRoom</Link>
           </li>
           <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/fact">Account</Link>
+          <Link className="nav-link active" aria-current="page" to="/Account">Account</Link>
           </li>
           <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/catpics">PrivateMessages</Link>
+          <Link className="nav-link active" aria-current="page" to="/DMs">PrivateMessages</Link>
           </li>
           <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/kittycube">Kitty Cube Easter Egg</Link>

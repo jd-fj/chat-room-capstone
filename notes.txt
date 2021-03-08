@@ -1,0 +1,5 @@
+useCollectionData() // listen to data with this hook
+
+potential collections that maybe be useful to add: 
+-messages (currently my only one)
+-users --> Friends, Friend Requests, 
