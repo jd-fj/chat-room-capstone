@@ -3,7 +3,7 @@ import firebase from '../firebase';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import ChatMessage from './ChatMessage';
 
-function ChatRoom() {
+function ImageRoom() {
   const dummy = useRef();
   const auth = firebase.auth();
   const firestore = firebase.firestore();
@@ -52,13 +52,9 @@ function ChatRoom() {
           </button>
           
         </form>
-
-        <div>
-        
-        </div>
       {/* </div> */}
     </>
   );
 }
 
-export default ChatRoom;
+export default ImageRoom;
