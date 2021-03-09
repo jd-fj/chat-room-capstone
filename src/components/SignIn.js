@@ -21,15 +21,20 @@ function SignIn() {
       // console.log("picturte: " + result.additionalUserInfo.profile.picture)
       const user = result.user;
       const userProfile = result.additionalUserInfo.profile;
-      // const isNewUser = result.additionalUserInfo.isNewUser;
+      const isNewUser = result.additionalUserInfo.isNewUser;
+
+      console.log(isNewUser);
+      console.log()
       
-      
-      return firestore.collection("users").add({
-        displayName: userProfile.name,
-        email: userProfile.email,
-        avatar: userProfile.picture,
-        uid: user.uid
-      })
+      // if (isNewUser !== false){
+        return firestore.collection("users").add({
+          displayName: userProfile.name,
+          email: userProfile.email,
+          avatar: userProfile.picture,
+          uid: user.uid
+        })
+
+      // }
 
     });
   }
