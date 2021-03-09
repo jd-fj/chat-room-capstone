@@ -1,19 +1,25 @@
 import React from "react";
 import firebase from "../firebase";
+import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 function SignIn() {
+  const auth = firebase.auth();
+  const firestore = firebase.firestore();
+  const query = firestore.collection('users');
+  const [users] = useCollectionData(query);
+  
 
   const signInWithGoogle = () => {
-    const auth = firebase.auth();
-    const firestore = firebase.firestore();
+    
     const provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('profile');
     provider.addScope('email');
+    
 
     auth.signInWithPopup(provider)
     .then(function(result){
       // console.log(result)
-      // console.log(result.user.id);
+
       // console.log(result.additionalUserInfo)
       // console.log("newUser?: " + result.additionalUserInfo.isNewUser)
       // console.log("name: " + result.additionalUserInfo.profile.name)
@@ -23,8 +29,16 @@ function SignIn() {
       const userProfile = result.additionalUserInfo.profile;
       const isNewUser = result.additionalUserInfo.isNewUser;
 
-      console.log(isNewUser);
-      console.log()
+      console.log(user);
+      console.log("user.id: " + result.user.uid);
+      console.log("user.displayName: " + result.user.displayName);
+      console.log("user.email: " + result.user.email);
+      const userCollection = firestore.collection('users')
+      console.log(userCollection);
+      console.log(users)
+      console.log(users.some(i => i.uid.includes(result.user.uid)))
+
+      
       
       // if (isNewUser !== false){
         return firestore.collection("users").add({
