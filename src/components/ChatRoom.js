@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import firebase from '../firebase';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import ChatMessage from './ChatMessage';
-import {Row, Col} from 'react-bootstrap';
+// import {Row, Col} from 'react-bootstrap';
 
 function ChatRoom() {
   const dummy = useRef();
@@ -39,7 +39,7 @@ function ChatRoom() {
         <span ref={dummy}></span>
       </main>
 
-      <div class='stickyBottom'>
+      <div className='stickyBottom'>
           <form onSubmit={sendMessage}>
 
             <input

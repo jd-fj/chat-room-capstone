@@ -45,7 +45,7 @@ main {
 main::-webkit-scrollbar {
   width: 0.25rem;
 }
-
+.
 main::-webkit-scrollbar-track {
   background: #1e1e24;
 }
@@ -176,22 +176,14 @@ img {
 
 .messageSent .messageReceived, img {
   width: 5%;
-  /* border: solid black; */
   font-size: xx-large;
 }
 
 .messageSent .messageReceived, p {
-  
-  /* border: solid black; */
   font-size: xx-large;
 }
 .sendButton {
-  /* position: fixed; */
   margin-right: 100px;
-}
-
-form {
-/* position: fixed; */
 }
 
 body {
@@ -208,16 +200,20 @@ body {
 .chatRoom {
   margin-bottom: 15%;
 }
-/* canvas {
-  border: 1px solid black;
-  height: 300px;
-  width: 300px;
-  position:relative;
+
+main {
+  padding: 10px;
+  height: 80vh;
+  margin: 10vh 0 10vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }
 
-
-#message {
-  position:absolute;
-  top:150px;
-  left:100px;
-} */
+main::-webkit-scrollbar {
+  width: 0.25rem;
+}
+.
+main::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
