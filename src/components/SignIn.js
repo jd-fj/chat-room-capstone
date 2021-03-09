@@ -10,47 +10,20 @@ function SignIn() {
   
 
   const signInWithGoogle = () => {
-    
     const provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('profile');
-    provider.addScope('email');
-    
-
     auth.signInWithPopup(provider)
     .then(function(result){
-      // console.log(result)
-
-      // console.log(result.additionalUserInfo)
-      // console.log("newUser?: " + result.additionalUserInfo.isNewUser)
-      // console.log("name: " + result.additionalUserInfo.profile.name)
-      // console.log("email: " + result.additionalUserInfo.profile.email)
-      // console.log("picturte: " + result.additionalUserInfo.profile.picture)
       const user = result.user;
-      const userProfile = result.additionalUserInfo.profile;
-      const isNewUser = result.additionalUserInfo.isNewUser;
+      const alreadyExists = users.some(u => u.uid.includes(result.user.uid)); //returns true if already existing
 
-      console.log(user);
-      console.log("user.id: " + result.user.uid);
-      console.log("user.displayName: " + result.user.displayName);
-      console.log("user.email: " + result.user.email);
-      const userCollection = firestore.collection('users')
-      console.log(userCollection);
-      console.log(users)
-      // console.log(users.some(i => i.uid.includes(result.user.uid)))
-
-      const alreadyExists = users.some(u => u.uid.includes(result.user.uid))
-      console.log(alreadyExists);
-      
       if (alreadyExists === false){
         return firestore.collection("users").add({
-          displayName: userProfile.name,
-          email: userProfile.email,
-          avatar: userProfile.picture,
+          displayName: user.displayName,
+          email: user.email,
+          avatar: user.photoURL,
           uid: user.uid
-        })
-
+        });
       }
-
     });
   }
 

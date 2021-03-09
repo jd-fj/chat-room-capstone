@@ -58,3 +58,4 @@ collection ID
 * send cubes with kitty images
 * single chat room, but you can branch off and have a seperate chat? 
 * 
+
