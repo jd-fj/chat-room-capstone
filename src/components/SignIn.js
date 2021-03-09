@@ -12,12 +12,12 @@ function SignIn() {
     auth.signInWithPopup(provider)
     .then(function(result){
       console.log(result)
-      // {user: Dm, credential: Gg, additionalUserInfo: mg, operationType: "signIn"}
-      console.log(result.user);
+      console.log(result.user.id);
       console.log(result.additionalUserInfo)
-      // console.log(result.additionalUserInfo.profile)
-      // console.log("email: " + result.additionalUserInfo.profile.email)
-      // console.log("NAME: " + result.additionalUserInfo.profile.name)
+      console.log("newUser?: " + result.additionalUserInfo.isNewUser)
+      console.log("name: " + result.additionalUserInfo.profile.name)
+      console.log("email: " + result.additionalUserInfo.profile.email)
+      console.log("picturte: " + result.additionalUserInfo.profile.picture)
 
     });
   }
