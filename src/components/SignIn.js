@@ -36,11 +36,12 @@ function SignIn() {
       const userCollection = firestore.collection('users')
       console.log(userCollection);
       console.log(users)
-      console.log(users.some(i => i.uid.includes(result.user.uid)))
+      // console.log(users.some(i => i.uid.includes(result.user.uid)))
 
+      const alreadyExists = users.some(u => u.uid.includes(result.user.uid))
+      console.log(alreadyExists);
       
-      
-      // if (isNewUser !== false){
+      if (alreadyExists === false){
         return firestore.collection("users").add({
           displayName: userProfile.name,
           email: userProfile.email,
@@ -48,7 +49,7 @@ function SignIn() {
           uid: user.uid
         })
 
-      // }
+      }
 
     });
   }
