@@ -1,62 +1,43 @@
-// import React, { useRef, useState } from 'react';
-// import firebase from '../firebase';
+import React, { } from 'react';
+import firebase from '../firebase';
+import 'firebase/storage';
 // import { useCollectionData } from 'react-firebase-hooks/firestore';
 // import ChatMessage from './ChatMessage';
 // import {Row, Col} from 'react-bootstrap';
 
-// function ChatRoom() {
-//   const dummy = useRef();
-//   const auth = firebase.auth();
-//   const firestore = firebase.firestore();
-//   const messagesRef = firestore.collection('messages');
-//   const query = messagesRef.orderBy('createdAt').limit(25);
+function Account() {
+  // const storageRef = firebase.storage().ref();
+  // const uploadsRef = storageRef.child('uploads')
 
-//   const [messages] = useCollectionData(query, { idField: 'id' });
-//   const [formValue, setFormValue] = useState('');
+  const fileButton = document.querySelector('#fileButton');
+  let imageURL;
 
-//   const sendMessage = async (e) => {
-//     e.preventDefault();
+  fileButton.addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    const storageRef = storage.ref('profilePhotos/' + file.name)
+  })
 
-//     const { uid, photoURL } = auth.currentUser;
+  return (
+    <>
+      <h1>Account</h1>
 
-//     await messagesRef.add({
-//       text: formValue,
-//       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-//       uid,
-//       photoURL,
-//     });
+    </>
+  );
+}
 
-//     setFormValue('');
-//     dummy.current.scrollIntoView({ behavior: 'smooth' });
-//   };
+export default Account;
 
-//   return (
-//     <>
-//       <main className="chatRoom">
-//         {messages &&
-//           messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
 
-//         <span ref={dummy}></span>
-//       </main>
+// i suspect i'll want to include this here: 
 
-//       <div class='stickyBottom'>
-//           <form onSubmit={sendMessage}>
+// // Update a user's profile: from https://firebase.google.com/docs/auth/web/manage-users
+// var user = firebase.auth().currentUser;
 
-//             <input
-//               className='inputControl'
-//               value={formValue}
-//               onChange={(e) => setFormValue(e.target.value)}
-//               placeholder='text input'
-//             />
-  
-//           <button className="sendButton" type='submit' disabled={!formValue}>
-//             sEnd
-//           </button>
-
-//         </form>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default ChatRoom;
+// user.updateProfile({
+//   displayName: "Jane Q. User",
+//   photoURL: "https://example.com/jane-q-user/profile.jpg"
+// }).then(function() {
+//   // Update successful.
+// }).catch(function(error) {b
+//   // An error happened.
+// });

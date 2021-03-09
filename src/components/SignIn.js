@@ -27,8 +27,6 @@ function SignIn() {
     });
   }
 
-
-
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>

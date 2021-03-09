@@ -12,7 +12,7 @@ import Navigation from './Navigation';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {Container} from 'react-bootstrap';
 import Homepage from './Homepage';
-// import Account from './Account';
+import Account from './Account';
 
 
 
@@ -43,7 +43,7 @@ function App() {
                 <Homepage/>
               </Route>
               <Route>
-                {/* <Account/> */}
+                <Account/>
               </Route>
             </Switch>
           </Container>
