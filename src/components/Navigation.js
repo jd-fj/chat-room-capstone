@@ -16,7 +16,7 @@ return(
             <Link className="nav-link active" aria-current="page" to="/ChatRoom">ChatRoom</Link>
           </li>
           <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/Account">Account</Link>
+          <Link className="nav-link active" aria-current="page" to="/Account2">Account</Link>
           </li>
           <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/DMs">PrivateMessages</Link>
