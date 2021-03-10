@@ -12,7 +12,8 @@ import Navigation from './Navigation';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {Container} from 'react-bootstrap';
 import Homepage from './Homepage';
-import Account2 from './Account2';
+// import Account2 from './Account2';
+import Account3 from './FriendRequests';
 
 
 
@@ -43,7 +44,7 @@ function App() {
                 <Homepage/>
               </Route>
               <Route>
-                <Account2/>
+                <Account3/>
               </Route>
             </Switch>
           </Container>
