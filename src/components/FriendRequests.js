@@ -17,6 +17,30 @@ const FriendRequests = (props) => {
     .doc(currentUser.uid)
     .collection("pendingRequests");
 
-  const
+  const acceptRequest = (userEmail, id) => {
+    alert('accepted');
+    friendsRef.doc(userEmail).set({
+      email: userEmail,
+      id: id,
+    });
+    usersRef.doc(id).collection("friends").doc(currentUser.email).set({
+      email: currentUser.email,
+      id: currentUser.uid,
+    });
+    pendingRequestsRef
+      .doc(userEmail)
+      .delete()
+      .then(()=>{
+        console.log("deleted from requests");
+      });
+    usersRef
+      .doc(id)
+      .collection("sentRequests")
+      .doc(currentUser.email)
+      .delete()
+      .then(() => {
+        console.log('successfully deleted');
+      });
+  }
 
 }
