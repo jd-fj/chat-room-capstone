@@ -1,6 +1,6 @@
 # Capstone Proposal
 
-Name of Project: Guffaw?
+Name of Project: KatChat
 
 Project's Purpose or Goal: (allow users to send messages to contacts and potentially send other media types as well)
 
