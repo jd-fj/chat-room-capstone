@@ -1,43 +1,40 @@
 import React, {useState} from 'react';
 import firebase from '../firebase';
-//new
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import { Col, Row } from 'react-bootstrap';
+
 
 
 function ChatMessage(props) {
-
   // const [isLoaded, setLoading] = useState(true); 
-
   const auth = firebase.auth();
   const { text, uid, photoURL } = props.message;
   const messageClass = uid === auth.currentUser.uid ? 'Sent' : 'Received';
-  //new
   const currentUserRef = firebase.firestore().collection('users').where("uid", "==", uid)
   const [users] = useCollectionData(currentUserRef, { idField: 'id' });
-  // console.log(users);
 
   if (users){
     const avatar = users[0].avatar;
     return (
       <>
-        <div className={`message${messageClass}`}>
-          <img
-            src={
-              avatar || 'https://api.adorable.io/avatars/23/abott@adorable.png'
-            }
-            alt='user'
-          />
-          <p>{text}</p>
-        </div>
+        <Row>
+          <Col>
+            <div className={`message${messageClass}`}>
+              <img
+                src={avatar}
+                alt='user'
+              />
+              <p>{text}</p>
+            </div>
+          </Col>
+        </Row>
       </>
     );
   } else {
-    return "adflkj";
+      return <h2>Loading...</h2>;
+    }
   }
-  }
-  // {users &&  avatar = users[0].avatar;
-  // }
-  // const avatar = users[0].avatar;
+
 
   
 

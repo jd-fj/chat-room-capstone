@@ -9,6 +9,7 @@ import firebase from '../firebase';
 import SignOut from './SignOut';
 import ChatRoom from './ChatRoom';
 import Login from './Login';
+import Spinner from '../img/KATCHAT.svg'
 
 
 function Homepage() {
@@ -17,7 +18,8 @@ function Homepage() {
 
   return (
     <>
-      <section>{user ? <> <SignOut/> <ChatRoom/> </> : <Login/>}</section>
+      <section>{!user ? <img src={Spinner} className="App-logo" alt="logo"/> : null}</section>
+      <section>{user ? <> <SignOut/> <ChatRoom/> </> : <Login/> }</section>
 
     </>
   );

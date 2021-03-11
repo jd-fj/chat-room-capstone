@@ -12,9 +12,8 @@ import Navigation from './Navigation';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {Container} from 'react-bootstrap';
 import Homepage from './Homepage';
-import Upload from './Upload';
-// import Account2 from './Account2';
-// import Account3 from './FriendRequests';
+import Account from './Account';
+
 
 
 
@@ -38,14 +37,14 @@ function App() {
         <Navigation/>
           <Container>
             <Switch>
-              <Route exact path="/ProjName">
+              <Route exact path="/">
                 <Homepage/>
               </Route>
               <Route path='/ChatRoom'>
                 <Homepage/>
               </Route>
-              <Route>
-                <Upload/>
+              <Route path='/Account'>
+                <Account/>
               </Route>
             </Switch>
           </Container>
