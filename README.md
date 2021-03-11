@@ -93,7 +93,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 💡 Acknowledgments
+### 💡 Future Features
 
-#### [Epicodus](https://www.epicodus.com/)
->"A school for tech careers... to help people learn the skills they need to get great jobs."
+- Alternatives to Google authentication
+- User can send voice message using default system microphone (or file upload)
+- Speech-to-text message
+- Utilize an encryption library
+- A user can send/accept friend requests
+- Elegant style 😎 material ui?
+- Send a kitty cube
+- Either SoX or tonejs to access microphone and save audio
+- Google Speech-to-Text API for transcription services (free 60min/mo)
+- Encryption Libraries, one for Native: Crypto-js
