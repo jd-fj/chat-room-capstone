@@ -15,7 +15,7 @@ function Login() {
   return (
     <>
       {/* <header> */}
-        <h1>Login</h1>
+        {/* <h1>Login</h1> */}
       {/* </header> */}
 
       <section>{user ? <SignOut /> : <SignIn />}</section>
