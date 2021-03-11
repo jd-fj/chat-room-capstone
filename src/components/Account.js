@@ -13,7 +13,7 @@ function Upload() {
   const usersRef = firestore.collection('users').where("uid", "==", currentUser.uid)
   const [users] = useCollectionData(usersRef, { idField: 'id' });
 
-  const handleChange = e => {
+  const selectFile = e => {
     if (e.target.files[0]){
       setImage(e.target.files[0]);
     }
@@ -42,7 +42,7 @@ function Upload() {
       
           <div className="mb-3">
             <label name="image" className="form-label">Photo</label>
-            <input className="form-control" type="file" name="image" onChange={handleChange} />
+            <input className="form-control" type="file" name="image" onChange={selectFile} />
           </div>
           {isLoaded ? <button variant="success" onClick={uploadPhoto}>Pick New Avatar</button> : <button variant="success" type="submit">Set New Avatar</button>}
         </form>

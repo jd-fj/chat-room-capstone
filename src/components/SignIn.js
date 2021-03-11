@@ -14,7 +14,7 @@ function SignIn() {
     auth.signInWithPopup(provider)
     .then(function(result){
       const user = result.user;
-      const alreadyExists = users.some(u => u.uid.includes(result.user.uid)); //returns true if already existing
+      const alreadyExists = users.some(u => u.uid.includes(result.user.uid));
 
       if (alreadyExists === false){
         return firestore.collection("users").add({

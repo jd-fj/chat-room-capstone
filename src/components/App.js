@@ -12,8 +12,6 @@ import Account from './Account';
 
 
 function App() {
-
-
   return (
     <>
       <Router>
@@ -21,9 +19,6 @@ function App() {
           <Container>
             <Switch>
               <Route exact path="/">
-                <Homepage/>
-              </Route>
-              <Route path='/ChatRoom'>
                 <Homepage/>
               </Route>
               <Route path='/Account'>
