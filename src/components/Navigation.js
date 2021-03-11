@@ -6,7 +6,7 @@ function Navigation() {
 return(
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container-fluid">
-      <Link to="/ProjName" className="navbar-brand" >ProjName</Link>
+      <Link to="/" className="navbar-brand" >ProjName</Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -16,7 +16,7 @@ return(
             <Link className="nav-link active" aria-current="page" to="/ChatRoom">ChatRoom</Link>
           </li>
           <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/Account2">Account</Link>
+          <Link className="nav-link active" aria-current="page" to="/Account">Account</Link>
           </li>
           <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/DMs">PrivateMessages</Link>
