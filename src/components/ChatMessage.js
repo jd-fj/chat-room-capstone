@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import firebase from '../firebase';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { Col, Row } from 'react-bootstrap';
@@ -6,7 +6,7 @@ import { Col, Row } from 'react-bootstrap';
 
 
 function ChatMessage(props) {
-  // const [isLoaded, setLoading] = useState(true); 
+
   const auth = firebase.auth();
   const { text, uid, photoURL } = props.message;
   const messageClass = uid === auth.currentUser.uid ? 'Sent' : 'Received';
@@ -20,11 +20,8 @@ function ChatMessage(props) {
         <Row>
           <Col>
             <div className={`message${messageClass}`}>
-              <img
-                src={avatar}
-                alt='user'
-              />
-              <p>{text}</p>
+            <p>{avatar ? <img src={avatar} alt='user'/> : <img src={photoURL} alt="user"/>}
+              {text}</p>
             </div>
           </Col>
         </Row>
