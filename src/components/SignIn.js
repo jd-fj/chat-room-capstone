@@ -32,7 +32,7 @@ function SignIn() {
       <button className="sign-in" onClick={signInWithGoogle}>
         Sign in with Google
       </button>
-      <p>Sign in to go online and chat with peeps</p>
+      <p>Sign in to go online and chat with cool cats 😎 </p>
     </>
   );
 }
