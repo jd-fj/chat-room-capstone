@@ -7,16 +7,13 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 function Upload() {
   const [image, setImage] = useState(null);
-  const [isLoaded, setLoading] = useState(true); 
-  // const history = useHistory();
+  const [isLoaded, setLoading] = useState(true);
   const currentUser = firebase.auth().currentUser;
   const firestore = firebase.firestore();
-  
   const auth = firebase.auth();
   const currentUserRef = firestore.collection('users').where("uid", "==", currentUser.uid)
   const [users] = useCollectionData(currentUserRef, { idField: 'id' });
-  // const idMaybe = currentUserRef.id;
-  // const firestore = firebase.firestore();
+  // const history = useHistory();
 
   const handleChange = e => {
     if (e.target.files[0]){
@@ -38,27 +35,8 @@ function Upload() {
     const imageRef = firebase.storage().ref(`${currentUser.uid}/avatar/`).child(`${image.name}`);
     const receivedUrl = await imageRef.getDownloadURL().then(setLoading(false));
     const propertyToUpdate = { avatar: receivedUrl};
-    // console.log(users.id);
     firestore.collection('users').doc(users[0].id).update(propertyToUpdate);
-    // currentUserRef.update(propertyToUpdate);
-
-    // const setAvatarRef = firestore.collection('users')
-    // setAvatarRef.doc(`${currentUser.uid}`).update({
-    //       avatar: receivedUrl
-    //     })
-    console.log(currentUser.avatar);
-    
-        // console.log('REceiveth url')
-        // console.log(receivedUrl)
   }
-
-  // firestore.collection("users").add({
-  //   displayName: user.displayName,
-  //   email: user.email,
-  //   avatar: user.photoURL,
-  //   uid: user.uid
-  // });
-
 
   return (
     <>
