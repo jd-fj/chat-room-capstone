@@ -68,6 +68,8 @@ npm start
 ### Contact
 I would like to connect with people to continue learning and building. Please feel free to email me [taylulzcode@gmail.com](mailto:taylulzcode@gmail.com)
 
+### License
+
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Copyright (C) 2021 Taylor Delph. All Rights Reserved.
 ```
 MIT License
