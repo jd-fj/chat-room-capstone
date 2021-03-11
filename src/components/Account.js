@@ -10,15 +10,12 @@ function Upload() {
   const [isLoaded, setLoading] = useState(true);
   const currentUser = firebase.auth().currentUser;
   const firestore = firebase.firestore();
-  const auth = firebase.auth();
-  const currentUserRef = firestore.collection('users').where("uid", "==", currentUser.uid)
-  const [users] = useCollectionData(currentUserRef, { idField: 'id' });
-  // const history = useHistory();
+  const usersRef = firestore.collection('users').where("uid", "==", currentUser.uid)
+  const [users] = useCollectionData(usersRef, { idField: 'id' });
 
   const handleChange = e => {
     if (e.target.files[0]){
-      setImage(e.target.files[0])
-      console.log(users[0].id);
+      setImage(e.target.files[0]);
     }
   }
 
@@ -31,7 +28,6 @@ function Upload() {
 
   async function setNewPhoto(event) {
     event.preventDefault();
-    const currentUserID = auth.currentUser.uid;
     const imageRef = firebase.storage().ref(`${currentUser.uid}/avatar/`).child(`${image.name}`);
     const receivedUrl = await imageRef.getDownloadURL().then(setLoading(false));
     const propertyToUpdate = { avatar: receivedUrl};
@@ -57,11 +53,3 @@ function Upload() {
 }
 
 export default Upload;
-
-        // name: event.target.name.value,
-    //     email: event.target.email.value,
-    //     section1: getItemsFromTextArea(event.target.section1.value),
-    //     section2: getItemsFromTextArea(event.target.section2.value),
-    //     section3: event.target.section3.value,
-    //     imgURL: receivedUrl,
-    //     userId: auth.currentUser.uid
