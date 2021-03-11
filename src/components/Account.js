@@ -34,21 +34,25 @@ function Upload() {
     firestore.collection('users').doc(users[0].id).update(propertyToUpdate);
   }
 
-  return (
-    <>
-      <h1>upload</h1>
-      <div className="container" style={{width: '48rem'}}>
-        <form onSubmit={setNewPhoto}>
-      
-          <div className="mb-3">
-            <label name="image" className="form-label">Photo</label>
-            <input className="form-control" type="file" name="image" onChange={selectFile} />
-          </div>
-          {isLoaded ? <button variant="success" onClick={uploadPhoto}>Pick New Avatar</button> : <button variant="success" type="submit">Set New Avatar</button>}
-        </form>
-      </div>
-    </>
-  )
+  if (currentUser != null){
+    return (
+      <>
+        <h1>upload</h1>
+        <div className="container" style={{width: '48rem'}}>
+          <form onSubmit={setNewPhoto}>
+        
+            <div className="mb-3">
+              <label name="image" className="form-label">Photo</label>
+              <input className="form-control" type="file" name="image" onChange={selectFile} />
+            </div>
+            {isLoaded ? <button variant="success" onClick={uploadPhoto}>Pick New Avatar</button> : <button variant="success" type="submit">Set New Avatar</button>}
+          </form>
+        </div>
+      </>
+    )
+  } else {
+    return <h1>You must be signed in first</h1>
+  }
 
 }
 
