@@ -29,10 +29,12 @@ function SignIn() {
 
   return (
     <>
-      <button className="sign-in" onClick={signInWithGoogle}>
-        Sign in with Google
-      </button>
-      <p>Sign in to go online and chat with cool cats 😎 </p>
+      <div className="signInText">
+        <button className="sign-in" onClick={signInWithGoogle}>
+          Sign in with Google
+        </button>
+        <p>Sign in to go online and chat with cool cats <span role="img" alt="sunglass emoji" aria-labelledby="sunglass emoji">😎 </span></p>
+      </div>
     </>
   );
 }

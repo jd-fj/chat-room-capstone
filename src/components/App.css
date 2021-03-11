@@ -159,7 +159,12 @@ img {
 .App-logo {
 height: 40vmin;
 pointer-events: none;
-width: 190px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 40%;
+
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -176,6 +181,9 @@ width: 190px;
   }
 }
 
+.signInText {
+text-align: center;
+}
 
 .sign-out {
   margin: 1%;
