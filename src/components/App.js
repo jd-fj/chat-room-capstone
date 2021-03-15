@@ -8,9 +8,6 @@ import {Container} from 'react-bootstrap';
 import Homepage from './Homepage';
 import Account from './Account';
 
-
-
-
 function App() {
   return (
     <>
